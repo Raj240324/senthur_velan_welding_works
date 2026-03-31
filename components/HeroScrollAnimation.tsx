@@ -158,8 +158,12 @@ const maxScroll = window.innerHeight;
         
         {/* Loading State Overlay (Optional) */}
         {!loaded && (
-          <div className="hero-scroll-loading">
-            Loading High-Res Animation...
+          <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "center", justifyContent: "center", zIndex: 5, background: "#0a0a0a" }}>
+            <div style={{ width: "48px", height: "48px", border: "3px solid rgba(232,160,32,0.15)", borderTopColor: "#e8a020", borderRadius: "50%", animation: "heroSpin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite" }} />
+            <span style={{ fontFamily: "var(--font-cond)", letterSpacing: "0.2em", fontSize: "0.85rem", color: "#888", textTransform: "uppercase" }}>Loading Experience</span>
+            <style>
+              {`@keyframes heroSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}
+            </style>
           </div>
         )}
 
