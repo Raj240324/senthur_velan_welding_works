@@ -1,36 +1,40 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 interface CtaBannerProps {
-  title?: string;
-  description?: string;
-  primaryButtonText?: string;
+  titleKey?: string;
+  descKey?: string;
+  primaryButtonTextKey?: string;
   primaryButtonLink?: string;
-  phone?: string;
+  phoneKey?: string;
   phoneLink?: string;
 }
 
 export default function CtaBanner({
-  title = "Ready to Start Your Project?",
-  description = "Get a free estimate today. We serve Sernthamaram, Surandai & surrounding areas.",
-  primaryButtonText = "Get Free Quote",
+  titleKey = "cta.title",
+  descKey = "cta.desc",
+  primaryButtonTextKey = "cta.btnQuote",
   primaryButtonLink = "/contact",
-  phone = "Call Now",
+  phoneKey = "cta.btnCall",
   phoneLink = "tel:+919999999999",
 }: CtaBannerProps) {
+  const { t } = useTranslation();
   return (
     <section className="cta-banner">
       <div className="container">
         <div className="cta-inner">
           <div className="cta-text">
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2>{t(titleKey)}</h2>
+            <p>{t(descKey)}</p>
           </div>
           <div className="cta-actions">
             <Link href={primaryButtonLink} className="btn-primary btn-lg">
-              {primaryButtonText}
+              {t(primaryButtonTextKey)}
             </Link>
             <a href={phoneLink} className="btn-phone">
-              📞 {phone}
+              📞 {t(phoneKey)}
             </a>
           </div>
         </div>

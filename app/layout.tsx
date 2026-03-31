@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+import "./tamil-normalize.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -42,10 +44,12 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${barlow.variable} ${barlowCondensed.variable} antialiased`}
     >
       <body>
-        <Navbar />
-        {children}
-        <Footer />
-        <ScrollReveal />
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <ScrollReveal />
+        </LanguageProvider>
       </body>
     </html>
   );

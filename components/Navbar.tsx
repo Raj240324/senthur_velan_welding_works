@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { locale, setLocale, t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,10 @@ export default function Navbar() {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const toggleLang = () => {
+    setLocale(locale === "en" ? "ta" : "en");
+  };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`} id="navbar">
@@ -59,7 +65,7 @@ export default function Navbar() {
               className={pathname === "/" ? "active" : ""}
               onClick={closeMenu}
             >
-              Home
+              {t("nav.home")}
             </Link>
           </li>
           <li>
@@ -68,7 +74,7 @@ export default function Navbar() {
               className={pathname === "/services" ? "active" : ""}
               onClick={closeMenu}
             >
-              Services
+              {t("nav.services")}
             </Link>
           </li>
           <li>
@@ -77,7 +83,7 @@ export default function Navbar() {
               className={pathname === "/gallery" ? "active" : ""}
               onClick={closeMenu}
             >
-              Gallery
+              {t("nav.gallery")}
             </Link>
           </li>
           <li>
@@ -86,7 +92,7 @@ export default function Navbar() {
               className={pathname === "/about" ? "active" : ""}
               onClick={closeMenu}
             >
-              About
+              {t("nav.about")}
             </Link>
           </li>
           <li>
@@ -95,13 +101,36 @@ export default function Navbar() {
               className={pathname === "/contact" ? "active" : ""}
               onClick={closeMenu}
             >
-              Contact
+              {t("nav.contact")}
             </Link>
           </li>
           <li>
             <Link href="/contact" className="nav-cta" onClick={closeMenu}>
-              Get Quote
+              {t("nav.getQuote")}
             </Link>
+          </li>
+          <li>
+            <button
+              className="lang-toggle"
+              onClick={toggleLang}
+              aria-label="Toggle Language"
+              style={{
+                background: "rgba(232,160,32,0.12)",
+                border: "1px solid rgba(232,160,32,0.35)",
+                color: "#e8a020",
+                padding: "0.35em 0.8em",
+                borderRadius: "4px",
+                cursor: "pointer",
+                fontFamily: "var(--font-cond)",
+                fontSize: "0.8rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                transition: "all 0.3s ease",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {locale === "en" ? "தமிழ்" : "English"}
+            </button>
           </li>
         </ul>
       </div>

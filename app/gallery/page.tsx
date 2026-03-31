@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 const galleryItems = [
   // GATES
@@ -30,14 +31,15 @@ const galleryItems = [
 
 export default function Gallery() {
   const [filter, setFilter] = useState("all");
+  const { t } = useTranslation();
 
   return (
     <main>
       <PageHero
-        label="Our Work in Photos"
-        titleLight="Project"
-        titleBold="Gallery"
-        description="Browse completed projects — gates, railings, grills, ladders & custom metalwork."
+        label={t("galleryPage.heroLabel")}
+        titleLight={t("galleryPage.heroTitleLight")}
+        titleBold={t("galleryPage.heroTitleBold")}
+        description={t("galleryPage.heroDesc")}
       />
 
       <section className="section gallery-full">
@@ -47,37 +49,37 @@ export default function Gallery() {
               className={`filter-btn ${filter === "all" ? "active" : ""}`}
               onClick={() => setFilter("all")}
             >
-              All Projects
+              {t("galleryPage.filterAll")}
             </button>
             <button
               className={`filter-btn ${filter === "gates" ? "active" : ""}`}
               onClick={() => setFilter("gates")}
             >
-              House Gates
+              {t("galleryPage.filterGates")}
             </button>
             <button
               className={`filter-btn ${filter === "grills" ? "active" : ""}`}
               onClick={() => setFilter("grills")}
             >
-              Grill Gates
+              {t("galleryPage.filterGrills")}
             </button>
             <button
               className={`filter-btn ${filter === "railings" ? "active" : ""}`}
               onClick={() => setFilter("railings")}
             >
-              Railings
+              {t("galleryPage.filterRailings")}
             </button>
             <button
               className={`filter-btn ${filter === "ladders" ? "active" : ""}`}
               onClick={() => setFilter("ladders")}
             >
-              Ladders
+              {t("galleryPage.filterLadders")}
             </button>
             <button
               className={`filter-btn ${filter === "custom" ? "active" : ""}`}
               onClick={() => setFilter("custom")}
             >
-              Custom Work
+              {t("galleryPage.filterCustom")}
             </button>
           </div>
 
@@ -119,10 +121,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      <CtaBanner
-        title="Like What You See?"
-        description="Let us build something like this for your home or business."
-      />
+      <CtaBanner />
     </main>
   );
 }

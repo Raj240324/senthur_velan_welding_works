@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import CtaBanner from "@/components/CtaBanner";
 import HeroScrollAnimation from "@/components/HeroScrollAnimation";
+import { useTranslation } from "@/i18n/LanguageContext";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <main>
       {/* HERO SCROLL ANIMATION */}
@@ -12,42 +16,40 @@ export default function Home() {
         <div className="hero-overlay"></div>
         <div className="hero" style={{ height: '100%', width: '100%', pointerEvents: 'none', background: 'transparent' }}>
           <div className="hero-content" style={{ pointerEvents: 'auto' }}>
-            <div className="hero-badge">Est. — Sernthamaram & Surandai</div>
+            <div className="hero-badge">{t("hero.badge")}</div>
             <h1 className="hero-title">
-              <span className="line1">CRAFTED IN</span>
-              <span className="line2">STEEL.</span>
-              <span className="line3">BUILT TO LAST.</span>
+              <span className="line1">{t("hero.line1")}</span>
+              <span className="line2">{t("hero.line2")}</span>
+              <span className="line3">{t("hero.line3")}</span>
             </h1>
-            <p className="hero-desc">
-              Expert welding & fabrication for gates, railings, ladders and custom metalwork — quality workmanship at prices that make sense.
-            </p>
+            <p className="hero-desc">{t("hero.desc")}</p>
             <div className="hero-actions">
               <Link href="/contact" className="btn-primary">
-                Get Free Quote
+                {t("hero.btnQuote")}
               </Link>
               <Link href="/services" className="btn-outline">
-                Our Services
+                {t("hero.btnServices")}
               </Link>
             </div>
             <div className="hero-stats">
               <div className="stat">
                 <span className="stat-num">500+</span>
-                <span className="stat-label">Projects Done</span>
+                <span className="stat-label">{t("hero.statProjects")}</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat">
                 <span className="stat-num">10+</span>
-                <span className="stat-label">Years Experience</span>
+                <span className="stat-label">{t("hero.statExperience")}</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat">
                 <span className="stat-num">100%</span>
-                <span className="stat-label">Client Satisfaction</span>
+                <span className="stat-label">{t("hero.statSatisfaction")}</span>
               </div>
             </div>
           </div>
           <div className="scroll-indicator">
-            <span>Scroll</span>
+            <span>{t("hero.scroll")}</span>
             <div className="scroll-line"></div>
           </div>
         </div>
@@ -56,38 +58,18 @@ export default function Home() {
       {/* MARQUEE STRIP */}
       <div className="marquee-strip">
         <div className="marquee-track">
-          <span>Grill Gates</span>
-          <span className="dot">◆</span>
-          <span>House Gates</span>
-          <span className="dot">◆</span>
-          <span>Steel Ladders</span>
-          <span className="dot">◆</span>
-          <span>Railings</span>
-          <span className="dot">◆</span>
-          <span>Custom Metal Work</span>
-          <span className="dot">◆</span>
-          <span>Window Grills</span>
-          <span className="dot">◆</span>
-          <span>Compound Gates</span>
-          <span className="dot">◆</span>
-          <span>Staircase Railings</span>
-          <span className="dot">◆</span>
-          <span>Grill Gates</span>
-          <span className="dot">◆</span>
-          <span>House Gates</span>
-          <span className="dot">◆</span>
-          <span>Steel Ladders</span>
-          <span className="dot">◆</span>
-          <span>Railings</span>
-          <span className="dot">◆</span>
-          <span>Custom Metal Work</span>
-          <span className="dot">◆</span>
-          <span>Window Grills</span>
-          <span className="dot">◆</span>
-          <span>Compound Gates</span>
-          <span className="dot">◆</span>
-          <span>Staircase Railings</span>
-          <span className="dot">◆</span>
+          {[0, 1].map((_, idx) => (
+            <span key={idx}>
+              <span>{t("marquee.grillGates")}</span><span className="dot">◆</span>
+              <span>{t("marquee.houseGates")}</span><span className="dot">◆</span>
+              <span>{t("marquee.steelLadders")}</span><span className="dot">◆</span>
+              <span>{t("marquee.railings")}</span><span className="dot">◆</span>
+              <span>{t("marquee.customMetalWork")}</span><span className="dot">◆</span>
+              <span>{t("marquee.windowGrills")}</span><span className="dot">◆</span>
+              <span>{t("marquee.compoundGates")}</span><span className="dot">◆</span>
+              <span>{t("marquee.staircaseRailings")}</span><span className="dot">◆</span>
+            </span>
+          ))}
         </div>
       </div>
 
@@ -95,11 +77,11 @@ export default function Home() {
       <section className="section services-preview">
         <div className="container">
           <SectionHeader
-            label="What We Do"
-            titleStart="Our"
-            titleEm="Fabrication"
-            titleEnd="Services"
-            description="From decorative grillwork to heavy-duty gates — we fabricate and install with precision."
+            label={t("servicesPreview.label")}
+            titleStart={t("servicesPreview.titleStart")}
+            titleEm={t("servicesPreview.titleEm")}
+            titleEnd={t("servicesPreview.titleEnd")}
+            description={t("servicesPreview.desc")}
           />
           <div className="services-grid">
             <Link href="/services#grill-gates" className="service-card">
@@ -110,9 +92,9 @@ export default function Home() {
               </div>
               <div className="service-body">
                 <span className="service-num">01</span>
-                <h3>Grill Gates</h3>
-                <p>Decorative and security grill gates for homes and commercial spaces. Custom designs available.</p>
-                <span className="service-link">View Details →</span>
+                <h3>{t("servicesPreview.grillGates")}</h3>
+                <p>{t("servicesPreview.grillGatesDesc")}</p>
+                <span className="service-link">{t("servicesPreview.viewDetails")}</span>
               </div>
             </Link>
 
@@ -124,9 +106,9 @@ export default function Home() {
               </div>
               <div className="service-body">
                 <span className="service-num">02</span>
-                <h3>House Gates</h3>
-                <p>Strong, stylish entrance gates for houses and compounds. Both sliding and swinging styles.</p>
-                <span className="service-link">View Details →</span>
+                <h3>{t("servicesPreview.houseGates")}</h3>
+                <p>{t("servicesPreview.houseGatesDesc")}</p>
+                <span className="service-link">{t("servicesPreview.viewDetails")}</span>
               </div>
             </Link>
 
@@ -138,9 +120,9 @@ export default function Home() {
               </div>
               <div className="service-body">
                 <span className="service-num">03</span>
-                <h3>Steel Ladders</h3>
-                <p>Fixed and folding steel ladders for rooftop access, lofts, and industrial use.</p>
-                <span className="service-link">View Details →</span>
+                <h3>{t("servicesPreview.steelLadders")}</h3>
+                <p>{t("servicesPreview.steelLaddersDesc")}</p>
+                <span className="service-link">{t("servicesPreview.viewDetails")}</span>
               </div>
             </Link>
 
@@ -152,9 +134,9 @@ export default function Home() {
               </div>
               <div className="service-body">
                 <span className="service-num">04</span>
-                <h3>Railings</h3>
-                <p>Safety and decorative railings for stairs, balconies, terraces, and corridors.</p>
-                <span className="service-link">View Details →</span>
+                <h3>{t("servicesPreview.railings")}</h3>
+                <p>{t("servicesPreview.railingsDesc")}</p>
+                <span className="service-link">{t("servicesPreview.viewDetails")}</span>
               </div>
             </Link>
 
@@ -166,17 +148,17 @@ export default function Home() {
               </div>
               <div className="service-body">
                 <span className="service-num">05</span>
-                <h3>Custom Metal Works</h3>
-                <p>Any custom fabrication project — shelves, stands, frames, window grills, or unique structures.</p>
-                <span className="service-link">View Details →</span>
+                <h3>{t("servicesPreview.customMetalWorks")}</h3>
+                <p>{t("servicesPreview.customMetalWorksDesc")}</p>
+                <span className="service-link">{t("servicesPreview.viewDetails")}</span>
               </div>
             </Link>
 
             <Link href="/services" className="service-card service-card--cta">
               <div className="service-cta-inner">
                 <span className="cta-big-icon">→</span>
-                <h3>See All Services</h3>
-                <p>Explore our full range of metal fabrication offerings.</p>
+                <h3>{t("servicesPreview.seeAll")}</h3>
+                <p>{t("servicesPreview.seeAllDesc")}</p>
               </div>
             </Link>
           </div>
@@ -188,52 +170,50 @@ export default function Home() {
         <div className="container">
           <div className="why-grid">
             <div className="why-left">
-              <span className="section-label">Why Choose Us</span>
+              <span className="section-label">{t("whyUs.label")}</span>
               <h2 className="section-title">
-                Quality Work.<br />
-                <em>Honest Prices.</em>
+                {t("whyUs.titleLine1")}<br />
+                <em>{t("whyUs.titleLine2")}</em>
               </h2>
-              <p>
-                Sri Senthur Velan Welding Works has built a strong reputation across Sernthamaram, Surandai and nearby villages for delivering durable metalwork that combines craftsmanship with affordability.
-              </p>
+              <p>{t("whyUs.desc")}</p>
               <Link href="/about" className="btn-primary" style={{ marginTop: "2rem" }}>
-                Learn About Us
+                {t("whyUs.btnLearn")}
               </Link>
             </div>
             <div className="why-right">
               <div className="why-item">
                 <div className="why-icon">✦</div>
                 <div>
-                  <h4>Skilled Craftsmanship</h4>
-                  <p>Every weld and cut is done with care and experience — no shortcuts, no compromise on strength.</p>
+                  <h4>{t("whyUs.skilledTitle")}</h4>
+                  <p>{t("whyUs.skilledDesc")}</p>
                 </div>
               </div>
               <div className="why-item">
                 <div className="why-icon">✦</div>
                 <div>
-                  <h4>Affordable Pricing</h4>
-                  <p>We believe quality metalwork shouldn&apos;t break your budget. Transparent quotes with no hidden charges.</p>
+                  <h4>{t("whyUs.affordableTitle")}</h4>
+                  <p>{t("whyUs.affordableDesc")}</p>
                 </div>
               </div>
               <div className="why-item">
                 <div className="why-icon">✦</div>
                 <div>
-                  <h4>Custom Designs</h4>
-                  <p>Have a design in mind? We bring your ideas to life with custom fabrication tailored to your space.</p>
+                  <h4>{t("whyUs.customTitle")}</h4>
+                  <p>{t("whyUs.customDesc")}</p>
                 </div>
               </div>
               <div className="why-item">
                 <div className="why-icon">✦</div>
                 <div>
-                  <h4>On-Site Installation</h4>
-                  <p>We don&apos;t just fabricate — we deliver and install, ensuring a perfect fit every time.</p>
+                  <h4>{t("whyUs.onsiteTitle")}</h4>
+                  <p>{t("whyUs.onsiteDesc")}</p>
                 </div>
               </div>
               <div className="why-item">
                 <div className="why-icon">✦</div>
                 <div>
-                  <h4>Local & Trusted</h4>
-                  <p>Proudly serving Sernthamaram, Surandai and surrounding areas with a name you can trust.</p>
+                  <h4>{t("whyUs.localTitle")}</h4>
+                  <p>{t("whyUs.localDesc")}</p>
                 </div>
               </div>
             </div>
@@ -244,14 +224,14 @@ export default function Home() {
       {/* GALLERY PREVIEW */}
       <section className="section gallery-preview">
         <div className="container">
-          <SectionHeader label="Our Work" titleStart="Recent" titleEm="Projects" />
+          <SectionHeader label={t("galleryPreview.label")} titleStart={t("galleryPreview.titleStart")} titleEm={t("galleryPreview.titleEm")} />
           <div className="gallery-grid">
             <div className="gallery-item gi-large">
               <div className="gallery-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
                 <Image src="/images/house-gate.png" alt="House Gate" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
-                <span>House Gate — Surandai</span>
+                <span>{t("galleryPreview.houseGate")}</span>
               </div>
             </div>
             <div className="gallery-item">
@@ -259,7 +239,7 @@ export default function Home() {
                 <Image src="/images/grill-gate.png" alt="Window Grill" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
-                <span>Window Grill</span>
+                <span>{t("galleryPreview.windowGrill")}</span>
               </div>
             </div>
             <div className="gallery-item">
@@ -267,7 +247,7 @@ export default function Home() {
                 <Image src="/images/railings.png" alt="Staircase Railing" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
-                <span>Staircase Railing</span>
+                <span>{t("galleryPreview.staircaseRailing")}</span>
               </div>
             </div>
             <div className="gallery-item">
@@ -275,7 +255,7 @@ export default function Home() {
                 <Image src="/images/ladder.png" alt="Steel Ladder" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
-                <span>Steel Ladder</span>
+                <span>{t("galleryPreview.steelLadder")}</span>
               </div>
             </div>
             <div className="gallery-item">
@@ -283,13 +263,13 @@ export default function Home() {
                 <Image src="/images/custom.png" alt="Compound Gate" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
-                <span>Compound Gate</span>
+                <span>{t("galleryPreview.compoundGate")}</span>
               </div>
             </div>
           </div>
           <div style={{ textAlign: "center", marginTop: "3rem" }}>
             <Link href="/gallery" className="btn-outline">
-              View Full Gallery
+              {t("galleryPreview.viewFull")}
             </Link>
           </div>
         </div>
@@ -298,38 +278,38 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <section className="section testimonials">
         <div className="container">
-          <SectionHeader label="Client Words" titleStart="What People" titleEm="Say" />
+          <SectionHeader label={t("testimonials.label")} titleStart={t("testimonials.titleStart")} titleEm={t("testimonials.titleEm")} />
           <div className="testimonials-grid">
             <div className="testi-card">
               <div className="testi-stars">★★★★★</div>
-              <p>&quot;Excellent work! The house gate they made for us is very strong and looks beautiful. The price was very reasonable compared to others.&quot;</p>
+              <p>{t("testimonials.t1")}</p>
               <div className="testi-author">
                 <div className="testi-avatar">M</div>
                 <div>
-                  <strong>Murugesan</strong>
-                  <span>Surandai</span>
+                  <strong>{t("testimonials.t1Name")}</strong>
+                  <span>{t("testimonials.t1Location")}</span>
                 </div>
               </div>
             </div>
             <div className="testi-card testi-card--featured">
               <div className="testi-stars">★★★★★</div>
-              <p>&quot;I got my staircase railings and window grills done. Very neat finish, on-time delivery and they installed everything perfectly. Highly recommended!&quot;</p>
+              <p>{t("testimonials.t2")}</p>
               <div className="testi-author">
                 <div className="testi-avatar">P</div>
                 <div>
-                  <strong>Priya</strong>
-                  <span>Sernthamaram</span>
+                  <strong>{t("testimonials.t2Name")}</strong>
+                  <span>{t("testimonials.t2Location")}</span>
                 </div>
               </div>
             </div>
             <div className="testi-card">
               <div className="testi-stars">★★★★★</div>
-              <p>&quot;Got a custom metal shelf and ladder for my shop. Good quality steel, solid welding. Will come back for more work.&quot;</p>
+              <p>{t("testimonials.t3")}</p>
               <div className="testi-author">
                 <div className="testi-avatar">R</div>
                 <div>
-                  <strong>Rajendran</strong>
-                  <span>Nearby Village</span>
+                  <strong>{t("testimonials.t3Name")}</strong>
+                  <span>{t("testimonials.t3Location")}</span>
                 </div>
               </div>
             </div>

@@ -1,0 +1,175 @@
+/* ======================================
+   TAMIL LANGUAGE TEXT SIZE NORMALIZATION
+   Balanced sizing — readable Tamil without
+   breaking the layout design.
+   ====================================== */
+
+/* Global base — slight reduction from default 16px */
+html[data-lang="ta"] { font-size: 15px !important; }
+
+/* Remove excess letter-spacing for Tamil */
+html[data-lang="ta"] h1, html[data-lang="ta"] h2, html[data-lang="ta"] h3,
+html[data-lang="ta"] h4, html[data-lang="ta"] p, html[data-lang="ta"] span,
+html[data-lang="ta"] a, html[data-lang="ta"] li, html[data-lang="ta"] label,
+html[data-lang="ta"] button { letter-spacing: 0.01em !important; }
+
+/* ---- NAVBAR ---- */
+html[data-lang="ta"] .nav-links a {
+  font-size: 0.72rem !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+}
+html[data-lang="ta"] .nav-cta {
+  font-size: 0.68rem !important;
+  padding: 0.5em 1em !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+}
+html[data-lang="ta"] .lang-toggle {
+  font-size: 0.68rem !important;
+  padding: 0.35em 0.7em !important;
+}
+html[data-lang="ta"] .logo-main { font-size: 0.9rem !important; }
+html[data-lang="ta"] .logo-sub { font-size: 0.6rem !important; }
+
+/* ---- HERO TITLE (per-line targeting) ---- */
+html[data-lang="ta"] .hero-title .line1 {
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem) !important;
+  letter-spacing: 0 !important;
+}
+html[data-lang="ta"] .hero-title .line2 {
+  font-size: clamp(3rem, 9vw, 7rem) !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+}
+html[data-lang="ta"] .hero-title .line3 {
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem) !important;
+  letter-spacing: 0 !important;
+}
+html[data-lang="ta"] .hero-desc {
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+html[data-lang="ta"] .hero-badge {
+  font-size: 0.62rem !important;
+  letter-spacing: 0.06em !important;
+}
+html[data-lang="ta"] .stat-num { font-size: 1.6rem !important; }
+html[data-lang="ta"] .stat-label {
+  font-size: 0.6rem !important;
+  letter-spacing: 0.04em !important;
+}
+html[data-lang="ta"] .scroll-indicator span { font-size: 0.6rem !important; }
+
+/* ---- BUTTONS ---- */
+html[data-lang="ta"] .btn-primary,
+html[data-lang="ta"] .btn-outline {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.04em !important;
+  padding: 0.8em 1.6em !important;
+  white-space: nowrap !important;
+}
+html[data-lang="ta"] .btn-primary.btn-lg { font-size: 0.78rem !important; }
+html[data-lang="ta"] .btn-phone { font-size: 0.72rem !important; white-space: nowrap !important; }
+html[data-lang="ta"] .btn-whatsapp { font-size: 0.78rem !important; white-space: nowrap !important; }
+html[data-lang="ta"] .btn-full { font-size: 0.78rem !important; }
+html[data-lang="ta"] .filter-btn { font-size: 0.68rem !important; padding: 0.5em 1.1em !important; }
+
+/* ---- PAGE HERO ---- */
+html[data-lang="ta"] .page-hero h1 { font-size: clamp(1.8rem, 4.5vw, 3rem) !important; letter-spacing: 0 !important; }
+html[data-lang="ta"] .page-hero p { font-size: 0.9rem !important; }
+html[data-lang="ta"] .page-hero .section-label { font-size: 0.62rem !important; }
+
+/* ---- SECTION HEADERS ---- */
+html[data-lang="ta"] .section-title { font-size: clamp(1.5rem, 3.5vw, 2.3rem) !important; line-height: 1.25 !important; letter-spacing: 0 !important; }
+html[data-lang="ta"] .section-label { font-size: 0.62rem !important; letter-spacing: 0.08em !important; }
+
+/* ---- MARQUEE ---- */
+html[data-lang="ta"] .marquee-track span { font-size: 0.72rem !important; letter-spacing: 0.04em !important; }
+
+/* ---- SERVICE CARDS (home) ---- */
+html[data-lang="ta"] .service-body h3 { font-size: 0.95rem !important; }
+html[data-lang="ta"] .service-body p { font-size: 0.8rem !important; }
+html[data-lang="ta"] .service-link { font-size: 0.68rem !important; }
+html[data-lang="ta"] .service-num { font-size: 0.78rem !important; }
+html[data-lang="ta"] .service-cta-inner h3 { font-size: 1rem !important; }
+html[data-lang="ta"] .service-cta-inner p { font-size: 0.8rem !important; }
+
+/* ---- SERVICE DETAIL (services page) ---- */
+html[data-lang="ta"] .service-detail-content h2 { font-size: 1.6rem !important; letter-spacing: 0 !important; }
+html[data-lang="ta"] .service-lead { font-size: 0.9rem !important; }
+html[data-lang="ta"] .service-detail-content p { font-size: 0.85rem !important; line-height: 1.7 !important; }
+html[data-lang="ta"] .service-features li { font-size: 0.8rem !important; }
+
+/* ---- WHY US ---- */
+html[data-lang="ta"] .why-left h2 { font-size: 1.6rem !important; }
+html[data-lang="ta"] .why-left p { font-size: 0.85rem !important; }
+html[data-lang="ta"] .why-item h4 { font-size: 0.88rem !important; }
+html[data-lang="ta"] .why-item p { font-size: 0.8rem !important; }
+
+/* ---- GALLERY ---- */
+html[data-lang="ta"] .gallery-overlay span { font-size: 0.78rem !important; }
+html[data-lang="ta"] .gal-info h4 { font-size: 0.82rem !important; }
+html[data-lang="ta"] .gal-info span { font-size: 0.68rem !important; }
+
+/* ---- TESTIMONIALS ---- */
+html[data-lang="ta"] .testi-card p { font-size: 0.82rem !important; }
+html[data-lang="ta"] .testi-author strong { font-size: 0.78rem !important; }
+html[data-lang="ta"] .testi-author span { font-size: 0.68rem !important; }
+
+/* ---- CTA BANNER ---- */
+html[data-lang="ta"] .cta-banner h2 { font-size: clamp(1.3rem, 2.8vw, 1.8rem) !important; letter-spacing: 0 !important; }
+html[data-lang="ta"] .cta-banner p { font-size: 0.82rem !important; }
+
+/* ---- FOOTER ---- */
+html[data-lang="ta"] .footer h4 { font-size: 0.78rem !important; letter-spacing: 0.06em !important; }
+html[data-lang="ta"] .footer p, html[data-lang="ta"] .footer li, html[data-lang="ta"] .footer li a { font-size: 0.75rem !important; }
+html[data-lang="ta"] .footer-bottom p { font-size: 0.68rem !important; }
+html[data-lang="ta"] .footer-contact li { font-size: 0.72rem !important; }
+
+/* ---- ABOUT PAGE ---- */
+html[data-lang="ta"] .about-intro-content h2 { font-size: 1.6rem !important; }
+html[data-lang="ta"] .lead-text { font-size: 0.9rem !important; }
+html[data-lang="ta"] .about-intro-content p { font-size: 0.85rem !important; }
+html[data-lang="ta"] .hl-num { font-size: 1.5rem !important; }
+html[data-lang="ta"] .hl-label { font-size: 0.62rem !important; }
+html[data-lang="ta"] .value-card h3 { font-size: 0.9rem !important; }
+html[data-lang="ta"] .value-card p { font-size: 0.78rem !important; }
+html[data-lang="ta"] .owner-content h2 { font-size: 1.5rem !important; }
+html[data-lang="ta"] .owner-content .lead-text { font-size: 0.88rem !important; }
+html[data-lang="ta"] .owner-content p { font-size: 0.82rem !important; }
+html[data-lang="ta"] .owner-name strong { font-size: 0.78rem !important; }
+html[data-lang="ta"] .owner-name span { font-size: 0.72rem !important; }
+html[data-lang="ta"] .area-card h3 { font-size: 0.9rem !important; }
+html[data-lang="ta"] .area-card p { font-size: 0.78rem !important; }
+
+/* ---- PROCESS STEPS ---- */
+html[data-lang="ta"] .process-step h3 { font-size: 0.85rem !important; }
+html[data-lang="ta"] .process-step p { font-size: 0.75rem !important; }
+
+/* ---- CONTACT PAGE ---- */
+html[data-lang="ta"] .contact-info h2 { font-size: 1.5rem !important; }
+html[data-lang="ta"] .contact-info p { font-size: 0.82rem !important; }
+html[data-lang="ta"] .contact-card h4 { font-size: 0.8rem !important; }
+html[data-lang="ta"] .contact-card span, html[data-lang="ta"] .cc-content span { font-size: 0.7rem !important; }
+html[data-lang="ta"] .form-card h3 { font-size: 1rem !important; }
+html[data-lang="ta"] .form-card p { font-size: 0.8rem !important; }
+html[data-lang="ta"] .form-card label { font-size: 0.7rem !important; }
+html[data-lang="ta"] .form-note { font-size: 0.68rem !important; }
+html[data-lang="ta"] .faq-question { font-size: 0.82rem !important; }
+html[data-lang="ta"] .faq-answer p { font-size: 0.78rem !important; }
+html[data-lang="ta"] .map-placeholder h3 { font-size: 1rem !important; }
+html[data-lang="ta"] .map-placeholder p { font-size: 0.8rem !important; }
+html[data-lang="ta"] .gallery-note p { font-size: 0.78rem !important; }
+
+/* ---- MOBILE NAV in Tamil ---- */
+@media (max-width: 900px) {
+  html[data-lang="ta"] .nav-links a { font-size: 1.1rem !important; }
+  html[data-lang="ta"] .nav-cta { font-size: 1rem !important; padding: 0.6em 1.2em !important; }
+}
+
+/* ---- Lang toggle styling ---- */
+.lang-toggle:hover {
+  background: rgba(232,160,32,0.25) !important;
+  border-color: #e8a020 !important;
+}
