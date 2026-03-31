@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import SectionHeader from "@/components/SectionHeader";
 import CtaBanner from "@/components/CtaBanner";
@@ -25,9 +26,8 @@ export default function Services() {
         <div className="container">
           <div className="service-detail-grid">
             <div className="service-detail-img">
-              <div className="detail-img-placeholder">
-                <span>📷</span>
-                <small>Add your grill gate photo here</small>
+              <div className="detail-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/grill-gate.png" alt="Grill Gate" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="service-badge">01</div>
             </div>
@@ -61,9 +61,8 @@ export default function Services() {
         <div className="container">
           <div className="service-detail-grid service-detail-grid--reverse">
             <div className="service-detail-img">
-              <div className="detail-img-placeholder">
-                <span>📷</span>
-                <small>Add your house gate photo here</small>
+              <div className="detail-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/house-gate.png" alt="House Gate" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="service-badge">02</div>
             </div>
@@ -97,9 +96,8 @@ export default function Services() {
         <div className="container">
           <div className="service-detail-grid">
             <div className="service-detail-img">
-              <div className="detail-img-placeholder">
-                <span>📷</span>
-                <small>Add your ladder photo here</small>
+              <div className="detail-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/ladder.png" alt="Steel Ladders" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="service-badge">03</div>
             </div>
@@ -133,9 +131,8 @@ export default function Services() {
         <div className="container">
           <div className="service-detail-grid service-detail-grid--reverse">
             <div className="service-detail-img">
-              <div className="detail-img-placeholder">
-                <span>📷</span>
-                <small>Add your railing photo here</small>
+              <div className="detail-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/railings.png" alt="Railings" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="service-badge">04</div>
             </div>
@@ -169,9 +166,8 @@ export default function Services() {
         <div className="container">
           <div className="service-detail-grid">
             <div className="service-detail-img">
-              <div className="detail-img-placeholder">
-                <span>📷</span>
-                <small>Add custom work photo here</small>
+              <div className="detail-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/custom.png" alt="Custom Metal Works" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="service-badge">05</div>
             </div>

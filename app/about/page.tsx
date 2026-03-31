@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import CtaBanner from "@/components/CtaBanner";
 import type { Metadata } from "next";
@@ -22,9 +23,8 @@ export default function About() {
         <div className="container">
           <div className="about-intro-grid">
             <div className="about-intro-img">
-              <div className="detail-img-placeholder big">
-                <span>📷</span>
-                <small>Add owner / workshop photo here</small>
+              <div className="detail-img-placeholder big" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/hero.png" alt="Sri Senthur Velan Workshop" fill style={{ objectFit: "cover" }} />
               </div>
             </div>
             <div className="about-intro-content">
@@ -103,9 +103,8 @@ export default function About() {
         <div className="container">
           <div className="owner-grid">
             <div className="owner-img">
-              <div className="detail-img-placeholder">
-                <span>📷</span>
-                <small>Add owner portrait photo here</small>
+              <div className="detail-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/hero.png" alt="Workshop Owner" fill style={{ objectFit: "cover" }} />
               </div>
             </div>
             <div className="owner-content">
@@ -136,27 +135,23 @@ export default function About() {
           <SectionHeader label="Behind the Scenes" titleStart="Our" titleEm="Workshop" />
           <div className="workshop-grid">
             <div className="ws-item ws-large">
-              <div className="ws-placeholder">
-                <span>📷</span>
-                <small>Add workshop overview photo</small>
+              <div className="ws-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/custom.png" alt="Workshop Overview" fill style={{ objectFit: "cover" }} />
               </div>
             </div>
             <div className="ws-item">
-              <div className="ws-placeholder">
-                <span>📷</span>
-                <small>Add welding-in-progress photo</small>
+              <div className="ws-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/hero.png" alt="Welding in Progress" fill style={{ objectFit: "cover" }} />
               </div>
             </div>
             <div className="ws-item">
-              <div className="ws-placeholder">
-                <span>📷</span>
-                <small>Add equipment photo</small>
+              <div className="ws-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/custom.png" alt="Workshop Equipment" fill style={{ objectFit: "cover" }} />
               </div>
             </div>
             <div className="ws-item">
-              <div className="ws-placeholder">
-                <span>📷</span>
-                <small>Add team / owner photo</small>
+              <div className="ws-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/ladder.png" alt="Our Team" fill style={{ objectFit: "cover" }} />
               </div>
             </div>
           </div>

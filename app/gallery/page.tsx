@@ -1,30 +1,31 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBanner from "@/components/CtaBanner";
 
 const galleryItems = [
   // GATES
-  { id: 1, category: "gates", title: "House Gate", location: "Surandai", imageType: "House gate", classes: "" },
-  { id: 2, category: "gates", title: "Compound Gate", location: "Sernthamaram", imageType: "Compound gate", classes: "" },
-  { id: 3, category: "gates", title: "Double Door Gate", location: "Nearby Village", imageType: "Double door gate", classes: "gal-wide" },
-  { id: 4, category: "gates", title: "Sliding Gate", location: "Surandai", imageType: "Sliding gate", classes: "" },
+  { id: 1, category: "gates", title: "House Gate", location: "Surandai", imageType: "House gate", classes: "", image: "/images/house-gate.png" },
+  { id: 2, category: "gates", title: "Compound Gate", location: "Sernthamaram", imageType: "Compound gate", classes: "", image: "/images/house-gate.png" },
+  { id: 3, category: "gates", title: "Double Door Gate", location: "Nearby Village", imageType: "Double door gate", classes: "gal-wide", image: "/images/house-gate.png" },
+  { id: 4, category: "gates", title: "Sliding Gate", location: "Surandai", imageType: "Sliding gate", classes: "", image: "/images/house-gate.png" },
   // GRILLS
-  { id: 5, category: "grills", title: "Window Grill", location: "Sernthamaram", imageType: "Window grill", classes: "" },
-  { id: 6, category: "grills", title: "Door Grill", location: "Surandai", imageType: "Door grill", classes: "gal-tall" },
-  { id: 7, category: "grills", title: "Decorative Grill", location: "Nearby Area", imageType: "Decorative grill", classes: "" },
+  { id: 5, category: "grills", title: "Window Grill", location: "Sernthamaram", imageType: "Window grill", classes: "", image: "/images/grill-gate.png" },
+  { id: 6, category: "grills", title: "Door Grill", location: "Surandai", imageType: "Door grill", classes: "gal-tall", image: "/images/grill-gate.png" },
+  { id: 7, category: "grills", title: "Decorative Grill", location: "Nearby Area", imageType: "Decorative grill", classes: "", image: "/images/grill-gate.png" },
   // RAILINGS
-  { id: 8, category: "railings", title: "Staircase Railing", location: "Surandai", imageType: "Staircase railing", classes: "" },
-  { id: 9, category: "railings", title: "Balcony Railing", location: "Sernthamaram", imageType: "Balcony railing", classes: "gal-wide" },
-  { id: 10, category: "railings", title: "Terrace Railing", location: "Nearby Area", imageType: "Terrace railing", classes: "" },
+  { id: 8, category: "railings", title: "Staircase Railing", location: "Surandai", imageType: "Staircase railing", classes: "", image: "/images/railings.png" },
+  { id: 9, category: "railings", title: "Balcony Railing", location: "Sernthamaram", imageType: "Balcony railing", classes: "gal-wide", image: "/images/railings.png" },
+  { id: 10, category: "railings", title: "Terrace Railing", location: "Nearby Area", imageType: "Terrace railing", classes: "", image: "/images/railings.png" },
   // LADDERS
-  { id: 11, category: "ladders", title: "Rooftop Ladder", location: "Surandai", imageType: "Rooftop ladder", classes: "" },
-  { id: 12, category: "ladders", title: "Loft Access Ladder", location: "Sernthamaram", imageType: "Loft ladder", classes: "" },
+  { id: 11, category: "ladders", title: "Rooftop Ladder", location: "Surandai", imageType: "Rooftop ladder", classes: "", image: "/images/ladder.png" },
+  { id: 12, category: "ladders", title: "Loft Access Ladder", location: "Sernthamaram", imageType: "Loft ladder", classes: "", image: "/images/ladder.png" },
   // CUSTOM
-  { id: 13, category: "custom", title: "Metal Shelving", location: "Shop, Surandai", imageType: "Metal shelf", classes: "" },
-  { id: 14, category: "custom", title: "Display Stand", location: "Nearby Town", imageType: "Custom stand", classes: "gal-tall" },
-  { id: 15, category: "custom", title: "Steel Frame Structure", location: "Sernthamaram", imageType: "Custom frame", classes: "" },
+  { id: 13, category: "custom", title: "Metal Shelving", location: "Shop, Surandai", imageType: "Metal shelf", classes: "", image: "/images/custom.png" },
+  { id: 14, category: "custom", title: "Display Stand", location: "Nearby Town", imageType: "Custom stand", classes: "gal-tall", image: "/images/custom.png" },
+  { id: 15, category: "custom", title: "Steel Frame Structure", location: "Sernthamaram", imageType: "Custom frame", classes: "", image: "/images/custom.png" },
 ];
 
 export default function Gallery() {
@@ -96,9 +97,8 @@ export default function Gallery() {
                   }}
                 >
                   <div className="gal-img-wrap">
-                    <div className="gal-placeholder">
-                      <span>📷</span>
-                      <small>{item.imageType} photo</small>
+                    <div className="gal-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                      <Image src={item.image} alt={item.title} fill style={{ objectFit: "cover" }} />
                     </div>
                   </div>
                   <div className="gal-info">

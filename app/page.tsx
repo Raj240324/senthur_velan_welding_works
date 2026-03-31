@@ -1,59 +1,57 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import CtaBanner from "@/components/CtaBanner";
+import HeroScrollAnimation from "@/components/HeroScrollAnimation";
 
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-bg">
-          <div className="hero-img-placeholder">
-            <div className="placeholder-icon">🔧</div>
-            <p className="placeholder-text">Add your workshop / work photo here</p>
-          </div>
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="hero-content">
-          <div className="hero-badge">Est. — Sernthamaram & Surandai</div>
-          <h1 className="hero-title">
-            <span className="line1">CRAFTED IN</span>
-            <span className="line2">STEEL.</span>
-            <span className="line3">BUILT TO LAST.</span>
-          </h1>
-          <p className="hero-desc">
-            Expert welding & fabrication for gates, railings, ladders and custom metalwork — quality workmanship at prices that make sense.
-          </p>
-          <div className="hero-actions">
-            <Link href="/contact" className="btn-primary">
-              Get Free Quote
-            </Link>
-            <Link href="/services" className="btn-outline">
-              Our Services
-            </Link>
-          </div>
-          <div className="hero-stats">
-            <div className="stat">
-              <span className="stat-num">500+</span>
-              <span className="stat-label">Projects Done</span>
+      {/* HERO SCROLL ANIMATION */}
+      <HeroScrollAnimation frameCount={240}>
+        <div className="hero-overlay"></div>
+        <div className="hero" style={{ height: '100%', width: '100%', pointerEvents: 'none', background: 'transparent' }}>
+          <div className="hero-content" style={{ pointerEvents: 'auto' }}>
+            <div className="hero-badge">Est. — Sernthamaram & Surandai</div>
+            <h1 className="hero-title">
+              <span className="line1">CRAFTED IN</span>
+              <span className="line2">STEEL.</span>
+              <span className="line3">BUILT TO LAST.</span>
+            </h1>
+            <p className="hero-desc">
+              Expert welding & fabrication for gates, railings, ladders and custom metalwork — quality workmanship at prices that make sense.
+            </p>
+            <div className="hero-actions">
+              <Link href="/contact" className="btn-primary">
+                Get Free Quote
+              </Link>
+              <Link href="/services" className="btn-outline">
+                Our Services
+              </Link>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat">
-              <span className="stat-num">10+</span>
-              <span className="stat-label">Years Experience</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat">
-              <span className="stat-num">100%</span>
-              <span className="stat-label">Client Satisfaction</span>
+            <div className="hero-stats">
+              <div className="stat">
+                <span className="stat-num">500+</span>
+                <span className="stat-label">Projects Done</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat">
+                <span className="stat-num">10+</span>
+                <span className="stat-label">Years Experience</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat">
+                <span className="stat-num">100%</span>
+                <span className="stat-label">Client Satisfaction</span>
+              </div>
             </div>
           </div>
+          <div className="scroll-indicator">
+            <span>Scroll</span>
+            <div className="scroll-line"></div>
+          </div>
         </div>
-        <div className="scroll-indicator">
-          <span>Scroll</span>
-          <div className="scroll-line"></div>
-        </div>
-      </section>
+      </HeroScrollAnimation>
 
       {/* MARQUEE STRIP */}
       <div className="marquee-strip">
@@ -106,9 +104,8 @@ export default function Home() {
           <div className="services-grid">
             <Link href="/services#grill-gates" className="service-card">
               <div className="service-img-wrap">
-                <div className="service-img-placeholder">
-                  <span>🚪</span>
-                  <small>Add grill gate image</small>
+                <div className="service-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                  <Image src="/images/grill-gate.png" alt="Grill Gate Service" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
               <div className="service-body">
@@ -121,9 +118,8 @@ export default function Home() {
 
             <Link href="/services#house-gates" className="service-card">
               <div className="service-img-wrap">
-                <div className="service-img-placeholder">
-                  <span>🏠</span>
-                  <small>Add house gate image</small>
+                <div className="service-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                  <Image src="/images/house-gate.png" alt="House Gate Service" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
               <div className="service-body">
@@ -136,9 +132,8 @@ export default function Home() {
 
             <Link href="/services#ladders" className="service-card">
               <div className="service-img-wrap">
-                <div className="service-img-placeholder">
-                  <span>🪜</span>
-                  <small>Add ladder image</small>
+                <div className="service-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                  <Image src="/images/ladder.png" alt="Ladder Service" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
               <div className="service-body">
@@ -151,9 +146,8 @@ export default function Home() {
 
             <Link href="/services#railings" className="service-card">
               <div className="service-img-wrap">
-                <div className="service-img-placeholder">
-                  <span>🔩</span>
-                  <small>Add railing image</small>
+                <div className="service-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                  <Image src="/images/railings.png" alt="Railing Service" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
               <div className="service-body">
@@ -166,9 +160,8 @@ export default function Home() {
 
             <Link href="/services#custom" className="service-card">
               <div className="service-img-wrap">
-                <div className="service-img-placeholder">
-                  <span>⚙️</span>
-                  <small>Add custom work image</small>
+                <div className="service-img-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                  <Image src="/images/custom.png" alt="Custom Metal Service" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
               <div className="service-body">
@@ -254,45 +247,40 @@ export default function Home() {
           <SectionHeader label="Our Work" titleStart="Recent" titleEm="Projects" />
           <div className="gallery-grid">
             <div className="gallery-item gi-large">
-              <div className="gallery-placeholder">
-                <span>📷</span>
-                <small>Add project photo</small>
+              <div className="gallery-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/house-gate.png" alt="House Gate" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
                 <span>House Gate — Surandai</span>
               </div>
             </div>
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <span>📷</span>
-                <small>Add project photo</small>
+              <div className="gallery-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/grill-gate.png" alt="Window Grill" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
                 <span>Window Grill</span>
               </div>
             </div>
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <span>📷</span>
-                <small>Add project photo</small>
+              <div className="gallery-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/railings.png" alt="Staircase Railing" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
                 <span>Staircase Railing</span>
               </div>
             </div>
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <span>📷</span>
-                <small>Add project photo</small>
+              <div className="gallery-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/ladder.png" alt="Steel Ladder" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
                 <span>Steel Ladder</span>
               </div>
             </div>
             <div className="gallery-item">
-              <div className="gallery-placeholder">
-                <span>📷</span>
-                <small>Add project photo</small>
+              <div className="gallery-placeholder" style={{ position: "relative", width: "100%", height: "100%", background: "none" }}>
+                <Image src="/images/custom.png" alt="Compound Gate" fill style={{ objectFit: "cover" }} />
               </div>
               <div className="gallery-overlay">
                 <span>Compound Gate</span>
